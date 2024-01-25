@@ -6,7 +6,11 @@ export default {
     'node_modules/flowbite-react/lib/esm/**/*.js',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        black: '#000000',
+      }
+    },
   },
   plugins: [require.resolve('flowbite/plugin')],
 };
