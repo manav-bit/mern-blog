@@ -22,7 +22,7 @@ userId:req.user.id
     });
     try{
 const savedPost=await newPost.save();
-res.status(201).json({savedPost})
+res.status(201).json((savedPost))
     }
     catch(error){
         next(errorHandler(400,'Please provide all required fields'));
