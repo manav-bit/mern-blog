@@ -48,8 +48,8 @@ const posts=await Post.find({
     
 
 
-    }).sort({updatedAt:sortDirection}).skio(startIndex).limit(limit);
-
+    }).sort({updatedAt:sortDirection}).skip(startIndex).limit(limit);
+    // console.log(posts);
     const totalPosts=await Post.countDocuments();
     const now=new Date();
     const oneMonthAgo=new Date(
@@ -61,7 +61,7 @@ const posts=await Post.find({
         createdAt: {$gte:oneMonthAgo},//gte -> greater then
 
     });
-    re.status(200).json({
+    res.status(200).json({
         posts,
         totalPosts,
         lastMonthPosts
